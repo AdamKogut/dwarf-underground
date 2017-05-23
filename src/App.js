@@ -6,6 +6,7 @@ import Posts from './Posts.js'
 import Ads from './Ads.js'
 import Sidebar from './Sidebar.js'
 import Links from './Links.js'
+import Footer from './Footer.js'
 
 class App extends Component {
   render() {
@@ -31,10 +32,7 @@ class App extends Component {
         <Ads />
         </main>
 
-        <footer className="expanded row">
-          <h6>&copy; 2017 Erebor Industries</h6>
-          <h6 className="float-right">All rights reserved</h6>
-        </footer>
+        <Footer />
       </div>
     );
   }
