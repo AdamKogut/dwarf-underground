@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import './Comments.css'
 
 class Comments extends Component{
     constructor(props){
@@ -8,6 +9,7 @@ class Comments extends Component{
             comments:[],
         }
         this.updateComment=this.updateComment.bind(this)
+        this.addComment=this.addComment.bind(this)
     }
 
     updateComment(ev){
@@ -32,16 +34,20 @@ class Comments extends Component{
             <div className='comments'>
                 <textarea value={this.state.comment} onChange={this.updateComment} placeholder="Enter comment here"></textarea>
                 <button className='button' onClick={this.addComment.bind(this)}>Submit Comment</button>
-                {this.state.comments.map(comment=>{
-                    return(
-                        <div className="comment">
-                            <div>{props.comment.text}</div>
-                        </div>
-                    )
-                })}
+                {this.state.comments.map((comment, i) => <Comment comment={comment} key={i} />)}
             </div>
         )
     }
+    
+    
 }
 
+function Comment (props) {
+    return (
+        <div className="comment">
+            <div>{props.comment.text}</div>
+        </div>
+    )
+
+}
 export default Comments
