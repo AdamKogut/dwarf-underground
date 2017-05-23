@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import './Posts.css';
 
-class Header extends Component{
+class Posts extends Component{
     render(){
         return (
             <section className="article-body">
@@ -23,4 +23,4 @@ class Header extends Component{
     }
 }
 
-export default Header
+export default Posts
